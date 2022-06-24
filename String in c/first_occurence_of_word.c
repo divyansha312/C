@@ -1,0 +1,42 @@
+//WAP to find the first occurence of a word in a string
+
+#include<stdio.h>
+int main()
+{
+ int i,j,flag;
+ char str[30],word[10];
+ 
+ printf("enter the string\n");
+ gets(str);
+ 
+ printf("enter the word you want to search\n");
+ gets(word);
+ 
+ for(i=0;str[i]!='\0';i++)
+ {
+ 	if(str[i]==word[0])
+ 	{
+ 		flag=1;
+ 		for(j=0;word[j]!='\0';j++)
+ 		{
+ 			if(str[i+j]!=word[j])
+ 			{
+ 				flag=0;
+ 				break;
+			 }
+		 }
+	 }
+	 if(flag==1)
+	 {
+	 	break;
+	 }
+ }
+ 
+ if(flag==0)
+ printf("sorry word is not present here\n");
+ 
+ else
+ printf("first occurence of '%s' is at position %d\n",word,i+1);
+ 
+ return 0;
+}
